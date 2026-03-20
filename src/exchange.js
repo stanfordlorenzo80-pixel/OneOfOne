@@ -1,13 +1,14 @@
 const { google } = require('googleapis');
 
 const oauth2Client = new google.auth.OAuth2(
-  '933283513488-q8mvci2bqlggt0nbrh4s17jkumdq0jkc.apps.googleusercontent.com',
-  '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',
-  'http://localhost:3000/oauth2callback'
+  process.env.YOUTUBE_CLIENT_ID || 'REPLACE_WITH_CLIENT_ID',
+  process.env.YOUTUBE_CLIENT_SECRET || 'REPLACE_WITH_CLIENT_SECRET',
+  process.env.YOUTUBE_REDIRECT_URI || 'http://localhost:3000/oauth2callback'
 );
 
-// We use the EXACT code intercepted by the subagent
-oauth2Client.getToken('4/0AfrIepAI29E7T39hCTILz21NcNIKrhU-FAAj1NV_Da5p4U5Rgn-PyENcWWWDeDV2FHumrA')
+// Replacement code for token exchange
+const authCode = process.env.YOUTUBE_AUTH_CODE || 'REPLACE_WITH_AUTH_CODE';
+oauth2Client.getToken(authCode)
   .then(res => {
     console.log('✅ TOKEN=' + res.tokens.refresh_token);
     const fs = require('fs');
