@@ -1,0 +1,8 @@
+name = "throbbing-sun-c278"
+main = "worker.js"
+compatibility_date = "2024-03-20"
+
+kv_namespaces = [
+  { binding = "LICENSE_KEYS", id = "0628f2bf152c4292ab8a7e54bb99822f" },
+  { binding = "ACTIVATIONS", id = "99b58bda9a624e06825eb069a730e78c" }
+]
