@@ -1,0 +1,11 @@
+node_modules/
+.env
+license.txt
+temp/
+output/
+dist/
+.DS_Store
+registrations.json
+*.mp4
+*.png
+*.webp

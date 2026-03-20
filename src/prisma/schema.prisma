@@ -1,0 +1,33 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Video {
+  id           String   @id @default(cuid())
+  title        String
+  niche        String
+  status       String   // "GENERATING", "GENERATED", "UPLOADED"
+  youtubeId    String?  @unique
+  
+  // Tracking metrics
+  views        Int      @default(0)
+  revenue      Float    @default(0.0)
+  subsGained   Int      @default(0)
+  promoClicks  Int      @default(0) // Clicks on affiliate/promo links in description
+  
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model ChannelStat {
+  id           String   @id @default(cuid())
+  date         DateTime @default(now())
+  totalViews   Int
+  totalSubs    Int
+  totalRevenue Float
+}

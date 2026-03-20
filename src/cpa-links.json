@@ -1,0 +1,19 @@
+{
+  "offers": [
+    {
+      "name": "Dark Psychology Course",
+      "url": "https://example.com/psychology-course",
+      "niche": "dark-psychology"
+    },
+    {
+      "name": "Sigma Productivity Program",
+      "url": "https://example.com/productivity",
+      "niche": "sigma"
+    },
+    {
+      "name": "Reddit Story E-Book",
+      "url": "https://example.com/reddit-book",
+      "niche": "reddit-aita"
+    }
+  ]
+}
